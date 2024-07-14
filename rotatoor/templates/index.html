@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H4x0rM4rk3t - Crypt0 T3rm1n4l</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="terminal">
+        <div id="output">
+            <form method="get" action="/">
+                {% for token in ["BTC", "ETH", "SOL", "JUP", "SHDW", "JTO", "WIF", "BONK"] %}
+                <label>
+                    <input type="checkbox" name="tokens" value="{{ token }}" {% if token in tokens %}checked{% endif %}> {{ token }}
+                </label>
+                {% endfor %}
+                <button type="submit">Show Selected Tokens</button>
+            </form>
+            <div class="coins-container">
+                {% for token in tokens %}
+                <div class="coin-section">
+                    <h2>{{ token }}</h2>
+                    <div class="analysis">
+                        {% for interval in ['15m', '1h', '4h', '1d', '1w'] %}
+                        <div class="trend-block">
+                            <h3>{{ interval }} Analysis</h3>
+                            <span class="hover-area" onmouseover="showChart(this)" onmouseout="hideChart(this)">Hover to view graph</span>
+                            <img src="https://shdw-drive.genesysgo.net/3UgjUKQ1CAeaecg5CWk88q9jGHg8LJg9MAybp4pevtFz/{{ interval }}_Crypto.{{ token }}_USD.png" alt="{{ token }} {{ interval }} Candles" class="graph">
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showChart(span) {
+            const img = span.nextElementSibling;
+            img.style.display = 'block';
+        }
+
+        function hideChart(span) {
+            const img = span.nextElementSibling;
+            img.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
