@@ -2,6 +2,18 @@
 
 Rotatoor is an opinionated dashboard for market metrics and portfolio management. It provides a unified platform to access candle charts for various tokens across multiple timeframes, presented in a performant and simple manner. It is easily modifiable for other dashboard uses following the Bash-Python-Fastapi-Solana-ShdwDrive stack.
 
+Start by running the frontend which is pure python, before moving onto the backend which needs some more local file configs. 
+You will need the solana cli set up along with shadow drive. 
+I suggest exporting the wallet into a hot wallet using the privkey to make setting up shadow drive easier/less of a command line issue.
+You will need your own storage account on shadow drive if running the backend . 
+Generate a solana keypair as the docs show below, fund it with at least 0.25 SHDW and 0.05 SOL. 
+Go to: https://portal.shdwdrive.com/dashboard/storage/accounts
+and create a new account there with your keypair. The account is where your files will be stored, so make sure to upload them. 
+Run the python script to populate the graphs folder, then uplaod it or drag and drop it to you created folder.
+
+Any error are most likely due to setup, i suggest ChatGPTing them if needed initially - then feel free to message me on twitter :)
+Happy charting!
+
 ## Table of Contents
 
 - [Features](#features)
@@ -150,7 +162,7 @@ Rotatoor follows these development principles:
 
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_twitter) - email@example.com
+Your Name - [@your_twitter](https://x.com/bill_papas_12)
 
 Project Link: [https://github.com/hogyzen12/rotatoor](https://github.com/hogyzen12/rotatoor)
 
@@ -161,7 +173,5 @@ Project Link: [https://github.com/hogyzen12/rotatoor](https://github.com/hogyzen
 - [Jupiter](https://jup.ag/)
 - [Shadow Drive](https://shadow.cloud/)
 - [Solana](https://solana.com/)
-```
 
-This README file is now formatted professionally for GitHub, with clear sections, code blocks for commands, and additional sections like Contributing, License, and Contact. It provides a comprehensive overview of the project, installation instructions, and usage guidelines. The structure is clean and easy to navigate, making it user-friendly for both beginners and experienced developers.
 
